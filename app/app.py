@@ -59,6 +59,7 @@ def internal_error(e):
 # For web crawlers
 
 @app.route('/robots.txt')
+@app.route('/Robots.txt')
 def robots():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'robots.txt')
 
