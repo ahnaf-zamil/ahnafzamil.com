@@ -13,4 +13,4 @@ EXPOSE 8000
 
 VOLUME ["/server/content"]
 
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "server:app"]
+CMD gunicorn --log-level info --access-logfile - --error-logfile - -w 4 -b "0.0.0.0:8000" server:app 

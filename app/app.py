@@ -1,3 +1,4 @@
+import traceback
 from flask import Flask, render_template, request, flash, redirect, url_for, g
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -14,10 +15,10 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 
 # Enabling logging
-gunicorn_error_logger = logging.getLogger('gunicorn.error')
-app.logger.handlers.extend(gunicorn_error_logger.handlers)
-logging.basicConfig(level=logging.INFO)
-app.logger.setLevel(logging.INFO)
+gunicorn_logger = logging.getLogger('gunicorn.error')
+if gunicorn_logger.handlers:
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
 
 limiter = Limiter(
     key_func=lambda: request.headers.get("X-Real-IP")
@@ -51,6 +52,7 @@ def ratelimit_handler(e):
 
 @app.errorhandler(Exception)
 def internal_error(e):
+    app.logger.error(traceback.format_exc())
     return render_template("errors/500.html"), 500
 
 
