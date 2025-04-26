@@ -14,6 +14,8 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 
 # Enabling logging
+gunicorn_error_logger = logging.getLogger('gunicorn.error')
+app.logger.handlers.extend(gunicorn_error_logger.handlers)
 logging.basicConfig(level=logging.INFO)
 app.logger.setLevel(logging.INFO)
 
