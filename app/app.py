@@ -1,5 +1,5 @@
 import traceback
-from flask import Flask, render_template, request, flash, redirect, url_for, g
+from flask import Flask, render_template, request, flash, g, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from datetime import datetime
@@ -55,6 +55,16 @@ def internal_error(e):
     app.logger.error(traceback.format_exc())
     return render_template("errors/500.html"), 500
 
+
+# For web crawlers
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
 
 # Routes start here
 
