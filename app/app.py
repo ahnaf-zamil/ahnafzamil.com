@@ -22,6 +22,7 @@ limiter = Limiter(
     or get_remote_address(),  # Use X-Real-IP header for NGINX reverse proxy
     app=app,
     default_limits=[],
+    storage_uri=os.environ["REDIS_URI"]
 )
 
 EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
