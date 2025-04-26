@@ -1,0 +1,9 @@
+{% extends "errors/error_base.html" %}
+
+{% block http_status %}
+429: TOO MANY REQUESTS
+{% endblock %}
+
+{% block error_message %}
+The server needs some rest. Please give it a minute, and do it again 😊
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block head_extend %}
+<title>Contact - K.M Ahnaf Zamil | Backend & Systems Developer</title>
+{% endblock %}
+
+{% block content %}
+
+{{navbar("transparent")}}
+
+<section class="container max-w-3xl mx-auto py-16 fadeIn">
+    <h2 class="text-3xl font-bold mb-6 text-center font-title">CONTACT ME HERE</h2>
+
+    {% if g.status == "error" %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="w-full font-mono bg-rose-700 p-4 my-6">
+        <h1 class="font-semibold">Error(s) occurred during form validation:</h1>
+        <ul class="list-disc px-4">
+            {% for category, message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% elif g.status == "success" %}
+    <div class="w-full font-mono bg-emerald-700 p-4 my-6 text-center">
+        <h1 class="font-semibold">Your message has been sent! Keep an eye out on your email for replies.</h1>
+    </div>
+    {% endif %}
+
+    <form action="{{url_for('contact')}}" method="POST" class="grid grid-cols-1 gap-6">
+
+        <div>
+            <label class="block mb-2 text-sm font-medium" for="name">Name</label>
+            <input minlength="2" maxlength="50" type="text" id="name" name="name" required
+                class="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-theme-accent-2">
+        </div>
+
+        <div>
+            <label class="block mb-2 text-sm font-medium" for="email">Email</label>
+            <input minlength="5" maxlength="320" type="email" id="email" name="email" required
+                class="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-theme-accent-2">
+        </div>
+
+        <div>
+            <label class="block mb-2 text-sm font-medium" for="organization">Organization (Optional)</label>
+            <input minlength="0" maxlength="100" type="text" id="organization" name="organization"
+                class="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-theme-accent-2">
+        </div>
+
+        <div>
+            <label class="block mb-2 text-sm font-medium" for="subject">Subject</label>
+            <input minlength="5" maxlength="150" type="text" id="subject" name="subject" required
+                class="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-theme-accent-2">
+        </div>
+
+        <div>
+            <label class="block mb-2 text-sm font-medium" for="message">Message</label>
+            <textarea minlength="5" maxlength="2000" id="message" name="message" rows="5" required
+                class="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-theme-accent-2"></textarea>
+        </div>
+
+        <button type="submit"
+            class="bg-indigo-500 hover:bg-indigo-800 cursor-pointer font-medium text-white py-3 px-6 rounded-lg transition-all">
+            Send Message
+        </button>
+
+    </form>
+</section>
+
+<section class="container max-w-4xl mx-auto my-20 text-center">
+
+    <h2 class="text-3xl font-bold mb-8 font-title">OR SEND ME AN EMAIL</h2>
+
+    <h3 class="text-lg text-theme-muted">You can reach out to me at &nbsp;<span
+            class="font-mono text-white">ahnaf[at]ahnafzamil[dot]com</span>&nbsp; for any inquiries or collaboration
+        opportunities.</h3>
+</section>
+{{footer()}}
+
+{% endblock %}

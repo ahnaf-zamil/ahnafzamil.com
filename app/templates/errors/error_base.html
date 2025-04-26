@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head_extend %}
+<title>Error - K.M Ahnaf Zamil | Backend & Systems Developer</title>
+{% endblock %}
+
+{% block content %}
+
+{{navbar("transparent")}}
+
+<section class="container mx-auto px-4 text-center py-16">
+    <h1 class="font-title text-5xl py-6">{% block http_status %}{% endblock %}</h1>
+    <h2 class="text-theme-muted">{% block error_message %}{% endblock %}</h2>
+</section>
+
+{{footer()}}
+
+{% endblock %}

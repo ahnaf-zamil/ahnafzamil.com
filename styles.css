@@ -18,7 +18,7 @@ body {
 }
 
 
-#home-hero-text {
+.fadeIn {
   animation: fadeIn 1s ease-out;
 }
 
