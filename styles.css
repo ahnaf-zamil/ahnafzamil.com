@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-theme-bg: #101010;
+  --color-theme-text: #e5e5e5;
+  --color-theme-muted: #9ca3af;
+  --color-theme-accent: #1e88e5;
+  --color-theme-accent-2: #FFB300;
+
+  --font-title: "Bespoke Stencil", "sans-serif"; 
+  --font-sans: "General Sans", "sans-serif";
+  --font-mono: "JetBrains Mono", "monospace";
+}
+
+body {
+    color: white;
+    background-color: var(--color-theme-bg);
+}
+
+
+#home-hero-text {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.M Ahnaf Zamil</title>
+
+    <link href="https://api.fontshare.com/v2/css?f[]=bespoke-stencil@700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
+
+    <meta name="viewport" content="height=device-height,width=device-width, initial-scale=1.0,minimum-scale=1.0">
+
+    {% block head_extend %}{% endblock %}
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+        {% from 'macros/common.html' import navbar, footer with context %}
+
+        {% block content %}{% endblock %}
+
+        {% block scripts %}{% endblock %}
+    </main>
+</body>
+
+</html>

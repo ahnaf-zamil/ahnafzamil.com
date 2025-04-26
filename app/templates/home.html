@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block head_extend %}
+<script
+  src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{{navbar("transparent")}}
+
+
+<div id="home-hero" class="h-[calc(100vh-80px)] parallax text-center flex items-center justify-center relative">
+  <div id="tsparticles" class="fixed z-[-1] opacity-20 top-0 h-full"></div>
+  <div id="home-hero-text" class="margin-auto align-middle ">
+    <h1 class="text-6xl font-bold font-title">K.M AHNAF ZAMIL</h1>
+    <h2 class="text-theme-text text-xl mt-2">Backend & Systems Developer</h2>
+    <h3 class="text-theme-text text-xl mt-8">I build the things most people don’t see — until they break</h3>
+
+    <div id="hero-buttons" class="my-10">
+      <a href="{{about['github_url']}}"         class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm
+        font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500
+        group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200
+        dark:focus:ring-cyan-800">  <!-- Jinja2 will replace the single quotes inside the JS function -->
+        <span
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          See My Work
+
+        </span>
+      </a>
+      <a href="{{url_for('contact')}}"
+        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+        <span
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          Get in Touch
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="about-me py-16 bg-theme-bg">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Left Side (Text) -->
+      <div class="text-left flex flex-col justify-center">
+        <h2 class="text-3xl font-semibold mb-6 text-white font-title">ABOUT ME</h2>
+        <p class="text-xl text-theme-text">
+          Hi, I’m <b>Ahnaf</b>, a Backend & Systems Developer from Bangladesh with a passion for building scalable,
+          reliable, and
+          high-performance systems. I love challenges, whether it’s creating real-time communication platforms or
+          optimizing complex systems to handle thousands of requests per second.
+          <br><br>
+          I tend to build projects on a whim, diving into new challenges just to see where they take me—and often end up
+          optimizing them to production-grade quality. For instance, one day I got curious and built a search engine
+          that <span class="font-medium text-white">indexed over 1 million pages within a week</span>, all from scratch.
+          It's just what I do when I get excited. 😎
+
+
+        </p>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <img src="{{url_for('static', filename='img/tech.png')}}" alt="Your Image"
+          class="shadow-lg w-[500px] object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-theme-bg py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8 font-title">FEATURED PROJECTS</h2>
+    <div class="grid grid-cols-1 auto-rows-fr sm:grid-cols-2 gap-6">
+      {% for project in about['featured_projects'] %}
+      <a href="{{project['link']}}" target="_blank"
+        class="block rounded-xl font-sans border border-neutral-800 bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-indigo-500/15 to-neutral-900/25 p-6 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+        <h3 class="text-xl font-semibold font-mono text-white">{{project['name']}}</h3>
+        <p class="text-theme-text mt-2">{{project['description']}}</p>
+        <p class="text-theme-text mt-2"><span class="text-white font-medium">Technology used:
+          </span>{{project['technologies']}}</p>
+        <span class="mt-4 inline-block text-theme-accent hover:underline">View on GitHub →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="py-16">
+  <div class="container mx-auto text-center space-y-6">
+    <h2 class="text-3xl font-semibold text-gray-200 font-title">LET'S HAVE A CHAT </h2>
+    <p class="text-gray-400 text-lg">Whether it's a cool idea or just a conversation — I'm always open to talk.</p>
+
+    <a href="{{url_for('contact')}}"
+      class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
+      <span
+        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+        Get in Touch
+      </span>
+    </a>
+  </div>
+</section>
+
+{{footer()}}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  (async () => {
+    await loadSquaresPreset(tsParticles);
+
+    await tsParticles.load({
+      id: "tsparticles",
+      options: {
+        preset: "squares",
+        fullScreen: {
+          enable: false,
+        },
+        particles: {
+          stroke: {
+            width: 5,
+            color: {
+              value: [
+                "#5bc0eb",
+              ],
+            },
+          },
+        }
+      },
+    });
+  })();
+</script>
+{% endblock %}
