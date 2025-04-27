@@ -4,9 +4,9 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from datetime import datetime
 
-from app.service import discord
+from app.service import discord, cloudflare
+from app.util import cache, common
 
-import json
 import os
 import re
 import logging
@@ -21,34 +21,29 @@ if gunicorn_logger.handlers:
     app.logger.setLevel(gunicorn_logger.level)
 
 limiter = Limiter(
-    key_func=lambda: request.headers.get("X-Real-IP")
-    or get_remote_address(),  # Use X-Real-IP header for NGINX reverse proxy
+    key_func=common.get_client_ip,
     app=app,
     default_limits=[],
-    storage_uri=os.environ["REDIS_URI"]
+    storage_uri=os.environ["REDIS_URI"].strip() or "memory://" # Prod will always have a REDIS_URI
 )
 
 EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
-
-
-def get_about_info():
-    with open("./content/about.json") as f:
-        about_info = json.load(f)
-    return about_info
-
 
 # Global app configuration
 
 
 @app.context_processor
 def inject_about():
-    return dict(about=get_about_info(), year=datetime.now().year)
+    return dict(about=cache.get_about_info(), year=datetime.now().year)
 
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
     return render_template("errors/429.html"), 429
 
+@app.errorhandler(404)
+def notfound_handler(e):
+    return render_template("errors/404.html"), 404
 
 @app.errorhandler(Exception)
 def internal_error(e):
@@ -77,7 +72,7 @@ def home():
 
 @app.route("/contact", methods=["GET"])
 def contact():
-    return render_template("contact.html")
+    return render_template("contact.html", cf_site_key=os.environ["CF_SITE_KEY"])
 
 
 @app.route("/contact", methods=["POST"])
@@ -88,10 +83,12 @@ def handle_contact_form():
     organization = request.form.get("organization", "").strip()
     subject = request.form.get("subject", "").strip()
     message = request.form.get("message", "").strip()
+    cf_token = request.form.get("cf-turnstile-response", "").strip()
 
     # Very simple validation
     errors = []
-
+    if not cf_token:
+        errors.append("Invalid Cloudflare Turnstile token")
     if not (2 <= len(_name) <= 50):
         errors.append("Name must be between 2 and 50 characters.")
     if not (email and EMAIL_REGEX.match(email) and (5 <= len(email) <= 254)):
@@ -103,17 +100,21 @@ def handle_contact_form():
     if not (5 <= len(message) <= 1000):
         errors.append("Message must be between 5 and 1000 characters.")
 
+    # Verifies Cloudflare Turnstile captcha
+    if not cloudflare.verify_turnstile_token(cf_token):
+        errors.append("Captcha failure")
+
     if errors:
         g.status = "error"
         for error in errors:
             flash(error, "error")
-        return render_template("contact.html")
+        return render_template("contact.html", cf_site_key=os.environ["CF_SITE_KEY"])
 
-    # WIP: Integrate external API to send messages
+    # Posts message to a Discord webhook
     discord.post_webhook_message(_name, email, subject, message, organization)
 
     g.status = "success"
-    return render_template("contact.html")
+    return render_template("contact.html", cf_site_key=os.environ["CF_SITE_KEY"])
 
 
 @app.route("/blog")
