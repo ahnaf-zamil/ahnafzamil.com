@@ -4,8 +4,11 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from datetime import datetime
 
+from flask_migrate import Migrate
+
 from app.service import discord, cloudflare
 from app.util import cache, common
+from app.util.db import db
 
 import os
 import re
@@ -13,6 +16,10 @@ import logging
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URI"] 
+db.init_app(app)
+
+migrate = Migrate(app, db, compare_type=True)
 
 # Enabling logging
 gunicorn_logger = logging.getLogger('gunicorn.error')
