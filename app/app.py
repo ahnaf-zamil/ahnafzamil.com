@@ -104,8 +104,8 @@ def handle_contact_form():
         errors.append("Organization name too long.")
     if not (5 <= len(subject) <= 100):
         errors.append("Subject must be between 5 and 100 characters.")
-    if not (5 <= len(message) <= 1000):
-        errors.append("Message must be between 5 and 1000 characters.")
+    if not (5 <= len(message) <= 2000):
+        errors.append("Message must be between 5 and 2000 characters.")
 
     # Verifies Cloudflare Turnstile captcha
     if not cloudflare.verify_turnstile_token(cf_token):
