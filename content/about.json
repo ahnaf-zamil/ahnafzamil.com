@@ -18,7 +18,7 @@
       "name": "Project LocalDown",
       "description": "A Plex-like system for browsing locally downloaded Light Novels via a centralized UI - featuring a custom data scraper, multilingual full-text search engine, and client-side caching. Multi-device sync and LAN file access coming soon.",
       "technologies": "Python, Flask, TypeScript, React, PostgreSQL, BeautifulSoup",
-      "link": "https://github.com/ahnaf-zamil/light-novel-ocr"
+      "link": "https://github.com/ahnaf-zamil/project-localdown"
     },
     {
       "name": "Japanese Light Novel OCR",

@@ -1,0 +1,26 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - master 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: SSH and deploy
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          script: |
+            cd ahnafzamil.com
+            git pull origin master
+            docker build -t ahnafzamil.com:latest .
+            docker rm -f ahnafzamil.com || true
+            docker run -v "/home/ahnaf/ahnafzamil.com/content:/server/content" -p 8000:8000 --network ahnafzamil.com-network -d --name ahnafzamil.com ahnafzamil.com:latest
