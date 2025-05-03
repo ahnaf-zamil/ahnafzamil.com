@@ -1,30 +1,51 @@
 {
-    "github_url": "https://github.com/ahnaf-zamil",
-    "linkedin_url": "https://www.linkedin.com/in/ahnafzamil/",
-    "featured_projects": [
-        {
-            "name": "WebSocket RealTime Chat App",
-            "description": "A real-time distributed WebSocket chat backend designed to scale horizontally - leveraging cluster-wide pub-sub, request buffering and batched DB writes.",
-            "technologies": "Go, NATS, Kafka, CockroachDB/PostgreSQL",
-            "link": "https://github.com/ahnaf-zamil/ws_rt_app"
-        },
-        {
-            "name": "MeTube",
-            "description": "A custom-built distributed video encoding backend inspired by YouTube - featuring chunked uploads, task queues, and worker nodes for scalable processing.",
-            "technologies": "C/C++, RabbitMQ, Flask, Python, FFMPEG, MinIO/AWS S3",
-            "link": "https://github.com/ahnaf-zamil/metube"
-        },
-        {
-            "name": "Project LocalDown",
-            "description": "A Plex-like system for browsing locally downloaded Light Novels via a centralized UI - featuring a custom data scraper, multilingual full-text search engine, and client-side caching. Multi-device sync and LAN file access coming soon.",
-            "technologies": "Python, Flask, TypeScript, React, PostgreSQL, BeautifulSoup",
-            "link": "https://github.com/ahnaf-zamil/light-novel-ocr"
-        },
-        {
-            "name": "Japanese Light Novel OCR",
-            "description": "A nifty program made to scan text from Japanese Light Novel page images and output text",
-            "technologies": "C/C++, OpenCV, Tesseract",
-            "link": "https://github.com/ahnaf-zamil/light-novel-ocr"
-        }
-    ]
+  "github_url": "https://github.com/ahnaf-zamil",
+  "linkedin_url": "https://www.linkedin.com/in/ahnafzamil/",
+  "featured_projects": [
+    {
+      "name": "WebSocket RealTime Chat App",
+      "description": "A real-time distributed WebSocket chat backend designed to scale horizontally - leveraging cluster-wide pub-sub, request buffering and batched DB writes.",
+      "technologies": "Go, NATS, Kafka, CockroachDB/PostgreSQL",
+      "link": "https://github.com/ahnaf-zamil/ws_rt_app"
+    },
+    {
+      "name": "MeTube",
+      "description": "A custom-built distributed video encoding backend inspired by YouTube - featuring chunked uploads, task queues, and worker nodes for scalable processing.",
+      "technologies": "C/C++, RabbitMQ, Flask, Python, FFMPEG, MinIO/AWS S3",
+      "link": "https://github.com/ahnaf-zamil/metube"
+    },
+    {
+      "name": "Project LocalDown",
+      "description": "A Plex-like system for browsing locally downloaded Light Novels via a centralized UI - featuring a custom data scraper, multilingual full-text search engine, and client-side caching. Multi-device sync and LAN file access coming soon.",
+      "technologies": "Python, Flask, TypeScript, React, PostgreSQL, BeautifulSoup",
+      "link": "https://github.com/ahnaf-zamil/light-novel-ocr"
+    },
+    {
+      "name": "Japanese Light Novel OCR",
+      "description": "A nifty program made to scan text from Japanese Light Novel page images and output text",
+      "technologies": "C/C++, OpenCV, Tesseract",
+      "link": "https://github.com/ahnaf-zamil/light-novel-ocr"
+    }
+  ],
+  "technologies": [
+    { "lang": "Python", "icon": "python-plain" },
+    { "lang": "Go", "icon": "go-original-wordmark" },
+    { "lang": "JavaScript", "icon": "javascript-plain" },
+    { "lang": "TypeScript", "icon": "typescript-plain" },
+    { "lang": "C/C++", "icon": "c-plain" },
+    { "lang": "Lua", "icon": "lua-plain" },
+    { "lang": "PostgreSQL", "icon": "postgresql-plain" },
+    { "lang": "RabbitMQ", "icon": "rabbitmq-original" },
+    { "lang": "Redis", "icon": "redis-plain" },
+    { "lang": "Docker", "icon": "docker-plain" },
+    { "lang": "Kubernetes", "icon": "kubernetes-plain" },
+    { "lang": "AWS", "icon": "amazonwebservices-plain-wordmark" },
+    { "lang": "React.js", "icon": "react-original" },
+    { "lang": "Tailwind", "icon": "tailwindcss-original" },
+    { "lang": "NGINX", "icon": "nginx-original" },
+    { "lang": "Linux", "icon": "linux-plain" },
+    { "lang": "Cloudflare", "icon": "cloudflare-plain" },
+    { "lang": "Git", "icon": "git-plain" },
+    { "lang": "GitHub Actions", "icon": "githubactions-plain" }
+  ]
 }

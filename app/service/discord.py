@@ -22,10 +22,12 @@ def _build_msg(
 
 ### EMAIL
 `{email}`
+
 {
-    f"\n### ORGANIZATION\n{org}"
+    f"### ORGANIZATION{org}"
     if org else ""
 }
+
 
 ### BODY
 ```

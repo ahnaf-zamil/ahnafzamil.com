@@ -4,6 +4,7 @@
 <title>K.M Ahnaf Zamil | Backend & Systems Developer</title>
 <script
   src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"></script>
+<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 {% endblock %}
 
 {% block content %}
@@ -42,9 +43,8 @@
 </div>
 
 <section class="about-me py-16 bg-theme-bg">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Left Side (Text) -->
       <div class="text-left flex flex-col justify-center">
         <h2 class="text-3xl font-semibold mb-6 text-white font-title">ABOUT ME</h2>
         <p class="text-xl text-theme-text">
@@ -57,8 +57,6 @@
           optimizing them to production-grade quality. For instance, one day I got curious and built a search engine
           that <span class="font-medium text-white">indexed over 1 million pages within a week</span>, all from scratch.
           It's just what I do when I get excited. 😎
-
-
         </p>
       </div>
 
@@ -72,8 +70,9 @@
 
 
 <section class="bg-theme-bg py-16">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-8">
     <h2 class="text-3xl font-bold text-white mb-8 font-title">FEATURED PROJECTS</h2>
+
     <div class="grid grid-cols-1 auto-rows-fr sm:grid-cols-2 gap-6">
       {% for project in about['featured_projects'] %}
       <a href="{{project['link']}}" target="_blank"
@@ -84,6 +83,24 @@
           </span>{{project['technologies']}}</p>
         <span class="mt-4 inline-block text-theme-accent hover:underline">View on GitHub →</span>
       </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-theme-bg pb-32 pt-16">
+  <div class="container mx-auto px-8">
+    <h2 class="text-3xl font-bold text-white mb-8 font-title">WHAT I USE</h2>
+    <p class="text-xl text-theme-muted">I'm constantly learning new technologies, so this list will keep getting longer.</p>
+    <div class="py-4 sm:grid grid-rows-10 md:grid-rows-7 lg:grid-rows-5 grid-flow-col gap-x-6">        
+      {% for tech in about['technologies'] %}
+      <div class="flex items-center bg-neutral-900 px-6 py-4 my-4 sm:my-3 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all">
+        <button class="flex w-full cursor-pointer " >
+          <div class="flex items-center gap-7 text-lg text-theme-muted">
+            <i class="devicon-{{tech['icon']}} text-white text-2xl"></i>{{tech['lang']}}
+          </div>
+        </button>
+      </div>        
       {% endfor %}
     </div>
   </div>

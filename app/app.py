@@ -83,7 +83,7 @@ def contact():
 
 
 @app.route("/contact", methods=["POST"])
-@limiter.limit("5 per minute")
+# @limiter.limit("5 per minute")
 def handle_contact_form():
     _name = request.form.get("name", "").strip()
     email = request.form.get("email", "").strip()
