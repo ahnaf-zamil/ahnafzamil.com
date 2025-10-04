@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head_extend %}
-<title>K.M Ahnaf Zamil | Backend & Systems Developer</title>
+<title>K.M Ahnaf Zamil | Infrastructure Engineer & Consultant</title>
 <script
   src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"></script>
 <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -16,9 +16,9 @@
   <div id="tsparticles" class="fixed z-[-1] opacity-20 top-0 h-full"></div>
   <div class="margin-auto align-middle fadeIn">
     <h1 class="text-5xl md:text-6xl font-bold font-title">K.M AHNAF ZAMIL</h1>
-    <h2 class="text-theme-text text-lg md:text-xl mt-2">Backend & Systems Developer</h2>
-    <h3 class="text-theme-text text-lg md:text-xl mt-8">I build the things most people don’t see — until they break.
-    </h3>
+    <h2 class="text-theme-text text-lg md:text-xl mt-2">Infrastructure & Backend Systems Engineer</h2>
+    <h3 class="text-theme-text text-lg md:text-xl mt-8">I help startups build scalable infrastructure that doesn't break
+      as they grow.</h3>
 
     <div id="hero-buttons" class="my-10">
       <a href="{{about['github_url']}}" class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm
@@ -47,17 +47,33 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="text-left flex flex-col justify-center">
         <h2 class="text-3xl font-semibold mb-6 text-white font-title">ABOUT ME</h2>
-        <p class="text-xl text-theme-text">
-          Hi, I’m <b>Ahnaf</b>, a Backend & Systems Developer from Bangladesh with a passion for building scalable,
-          reliable, and
-          high-performance systems. I love challenges, whether it’s creating real-time communication platforms or
-          optimizing complex systems to handle thousands of requests per second.
-          <br><br>
-          I tend to build projects on a whim, diving into new challenges just to see where they take me—and often end up
-          optimizing them to production-grade quality. For instance, one day I got curious and built a search engine
-          that <span class="font-medium text-white">indexed over 1 million pages within a week</span>, all from scratch.
-          It's just what I do when I get excited. 😎
-        </p>
+        <div class="text-xl text-theme-text">
+          <p>
+            Hi, I’m <b>Ahnaf</b>! I design and build backend infrastructure for high-growth companies.
+          </p><br />
+          <p>
+            Over the past 7 years, I've architected everything from distributed real-time systems to multi-tenant
+            platforms. I specialize in:</p>
+
+          <ul class="list-disc text-xl text-theme-text list-inside">
+            <li>Distributed systems & microservices architecture</li>
+            <li>Real-time infrastructure (WebSockets, message queues, pub-sub)</li>
+            <li>Container orchestration & deployment automation</li>
+            <li>High-performance backends (Go, Python, C/C++)</li>
+            <li>Database scaling & optimization</li>
+          </ul>
+          <br />
+          <p>I work with startups and growth-stage companies on infrastructure that scales correctly from the start - so
+            you
+            don't face expensive rewrites later.</p>
+          <br />
+          <p>
+            Cool fact, once I got curious and built a search engine
+            that <span class="font-medium text-white">indexed over 1 million pages within a week</span>, all from
+            scratch.
+            It's just what I do when I get excited. 😎
+          </p>
+        </div>
       </div>
 
       <div class="flex justify-center items-center">
@@ -91,16 +107,18 @@
 <section class="bg-theme-bg pb-32 pt-16">
   <div class="container mx-auto px-8">
     <h2 class="text-3xl font-bold text-white mb-8 font-title">WHAT I USE</h2>
-    <p class="text-xl text-theme-muted">I'm constantly learning new technologies, so this list will keep getting longer.</p>
-    <div class="py-4 sm:grid grid-rows-10 md:grid-rows-7 lg:grid-rows-5 grid-flow-col gap-x-6">        
+    <p class="text-xl text-theme-muted">I'm constantly learning new technologies, so this list will keep getting longer.
+    </p>
+    <div class="py-4 sm:grid grid-rows-10 md:grid-rows-7 lg:grid-rows-5 grid-flow-col gap-x-6">
       {% for tech in about['technologies'] %}
-      <div class="flex items-center bg-neutral-900 px-6 py-4 my-4 sm:my-3 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all">
-        <button class="flex w-full cursor-pointer " >
+      <div
+        class="flex items-center bg-neutral-900 px-6 py-4 my-4 sm:my-3 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all">
+        <button class="flex w-full cursor-pointer ">
           <div class="flex items-center gap-7 text-lg text-theme-muted">
             <i class="devicon-{{tech['icon']}} text-white text-2xl"></i>{{tech['lang']}}
           </div>
         </button>
-      </div>        
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -108,16 +126,27 @@
 
 <section class="py-16">
   <div class="container mx-auto text-center space-y-6">
-    <h2 class="text-3xl font-semibold text-gray-200 font-title">LET'S HAVE A CHAT </h2>
-    <p class="text-gray-400 text-lg">Whether it's a cool idea or just a conversation — I'm always open to talk.</p>
+    <h2 class="text-3xl font-semibold text-gray-200 font-title">READY TO WORK TOGETHER?</h2>
+    <p class="text-gray-300 text-lg">If you're dealing with scaling challenges, need infrastructure expertise, or want
+      to discuss your technical architecture, let's talk.<br /><br />I'm currently available for consulting and contract
+      work.
+    </p>
 
-    <a href="{{url_for('contact')}}"
-      class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
-      <span
-        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-        Get in Touch
-      </span>
-    </a>
+    <div class="flex items-center justify-center gap-4"><a href="mailto:{{about['email']}}"
+        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
+        <span
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          Email Me
+        </span>
+      </a>
+      <p>or</p><a target="_blank" href="{{about['calendly_url']}}"
+        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+        <span
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          Schedule a Call
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 

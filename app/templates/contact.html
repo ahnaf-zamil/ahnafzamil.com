@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head_extend %}
-<title>Contact - K.M Ahnaf Zamil | Backend & Systems Developer</title>
+<title>Contact - K.M Ahnaf Zamil | Infrastructure Engineer & Consultant</title>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 {% endblock %}
 
@@ -9,7 +9,15 @@
 
 {{navbar("transparent")}}
 
+<section class="container max-w-4xl mx-auto my-12 text-center">
+
+    <h3 class="text-2xl text-theme-muted">You can send me an email at &nbsp;<span
+            class="font-mono text-white">{{about['email']}}</span>&nbsp; or book a call <a class="text-indigo-500" target="_blank" href="{{about['calendly_url']}}">here.</a></h3>
+</section>
+
+    <h2 class="text-3xl font-semibold text-center">OR</h2>
 <section class="container max-w-3xl mx-auto py-16 fadeIn">
+
     <h2 class="text-3xl font-bold mb-6 text-center font-title">CONTACT ME HERE</h2>
 
     {% if g.status == "error" %}
@@ -73,14 +81,6 @@
     </form>
 </section>
 
-<section class="container max-w-4xl mx-auto my-20 text-center">
-
-    <h2 class="text-3xl font-bold mb-8 font-title">OR SEND ME AN EMAIL</h2>
-
-    <h3 class="text-lg text-theme-muted">You can reach out to me at &nbsp;<span
-            class="font-mono text-white">ahnaf[at]ahnafzamil[dot]com</span>&nbsp; for any inquiries or collaboration
-        opportunities.</h3>
-</section>
 {{footer()}}
 
 {% endblock %}

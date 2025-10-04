@@ -1,10 +1,18 @@
 {
   "github_url": "https://github.com/ahnaf-zamil",
   "linkedin_url": "https://www.linkedin.com/in/ahnafzamil/",
+  "calendly_url": "https://calendly.com/ahnafzamil/30min",
+  "email": "ahnaf@ahnafzamil.com",
   "featured_projects": [
     {
-      "name": "WebSocket RealTime Chat App",
-      "description": "A real-time distributed WebSocket chat backend designed to scale horizontally - leveraging cluster-wide pub-sub, request buffering and batched DB writes.",
+      "name": "Stratus",
+      "description": "A multi-tenant Platform-as-a-Service infrastructure for deploying and managing containerized applications across distributed nodes.",
+      "technologies": "Go, Python, gRPC, TypeScript/React, Docker + gVisor, PostgreSQL",
+      "link": "https://github.com/ahnaf-zamil/stratus"
+    },
+    {
+      "name": "Monsoon",
+      "description": "A real-time, secure, scalable, end-to-end encrypted messaging platform designed with a zero-trust architecture. It features client-side key generation and cryptographic operations to ensure that raw passwords and private keys never leave the user's device.",
       "technologies": "Go, NATS, Kafka, CockroachDB/PostgreSQL",
       "link": "https://github.com/ahnaf-zamil/ws_rt_app"
     },
@@ -19,12 +27,6 @@
       "description": "A Plex-like system for browsing locally downloaded Light Novels via a centralized UI - featuring a custom data scraper, multilingual full-text search engine, and client-side caching. Multi-device sync and LAN file access coming soon.",
       "technologies": "Python, Flask, TypeScript, React, PostgreSQL, BeautifulSoup",
       "link": "https://github.com/ahnaf-zamil/project-localdown"
-    },
-    {
-      "name": "Japanese Light Novel OCR",
-      "description": "A nifty program made to scan text from Japanese Light Novel page images and output text",
-      "technologies": "C/C++, OpenCV, Tesseract",
-      "link": "https://github.com/ahnaf-zamil/light-novel-ocr"
     }
   ],
   "technologies": [

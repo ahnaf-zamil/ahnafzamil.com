@@ -16,13 +16,13 @@ import logging
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URI"] 
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ["DATABASE_URI"]
 db.init_app(app)
 
 migrate = Migrate(app, db, compare_type=True)
 
 # Enabling logging
-gunicorn_logger = logging.getLogger('gunicorn.error')
+gunicorn_logger = logging.getLogger("gunicorn.error")
 if gunicorn_logger.handlers:
     app.logger.handlers = gunicorn_logger.handlers
     app.logger.setLevel(gunicorn_logger.level)
@@ -31,7 +31,8 @@ limiter = Limiter(
     key_func=common.get_client_ip,
     app=app,
     default_limits=[],
-    storage_uri=os.environ["REDIS_URI"].strip() or "memory://" # Prod will always have a REDIS_URI
+    storage_uri=os.environ["REDIS_URI"].strip()
+    or "memory://",  # Prod will always have a REDIS_URI
 )
 
 EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
@@ -48,9 +49,11 @@ def inject_about():
 def ratelimit_handler(e):
     return render_template("errors/429.html"), 429
 
+
 @app.errorhandler(404)
 def notfound_handler(e):
     return render_template("errors/404.html"), 404
+
 
 @app.errorhandler(Exception)
 def internal_error(e):
@@ -60,14 +63,17 @@ def internal_error(e):
 
 # For web crawlers
 
-@app.route('/robots.txt')
-@app.route('/Robots.txt')
-def robots():
-    return send_from_directory(os.path.join(app.root_path, 'static'), 'robots.txt')
 
-@app.route('/sitemap.xml')
+@app.route("/robots.txt")
+@app.route("/Robots.txt")
+def robots():
+    return send_from_directory(os.path.join(app.root_path, "static"), "robots.txt")
+
+
+@app.route("/sitemap.xml")
 def sitemap():
-    return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
+    return send_from_directory(os.path.join(app.root_path, "static"), "sitemap.xml")
+
 
 # Routes start here
 

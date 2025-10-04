@@ -1,6 +1,7 @@
 import json
 import time
 
+
 class StateCache:
     expiry: int
     data: dict
@@ -9,7 +10,9 @@ class StateCache:
         self.data = {}
         self.expiry = -1
 
-cache = StateCache()       
+
+cache = StateCache()
+
 
 def get_about_info():
     """Caching the about information to reduce disk I/O load"""
@@ -19,7 +22,7 @@ def get_about_info():
         with open("./content/about.json") as f:
             about_info = json.load(f)
 
-        cache.expiry = now + 30 # 30 seconds cache expiry
+        cache.expiry = now + 30  # 30 seconds cache expiry
         cache.data = about_info
 
     return cache.data

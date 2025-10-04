@@ -6,14 +6,18 @@ import os
 
 s = requests.Session()
 
+
 def verify_turnstile_token(token: str):
     client_ip = get_client_ip()
 
-    rs = s.post("https://challenges.cloudflare.com/turnstile/v0/siteverify", json={
-        "secret": os.environ["CF_SECRET_KEY"],
-        "response": token,
-        "remoteip": client_ip
-    })
+    rs = s.post(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        json={
+            "secret": os.environ["CF_SECRET_KEY"],
+            "response": token,
+            "remoteip": client_ip,
+        },
+    )
     try:
         rs.raise_for_status()
     except requests.HTTPError as e:
