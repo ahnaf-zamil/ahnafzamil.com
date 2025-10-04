@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head_extend %}
-<title>K.M Ahnaf Zamil | Infrastructure Engineer & Consultant</title>
+<title>K.M Ahnaf Zamil | Infrastructure & Backend Systems Engineer</title>
 <script
   src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"></script>
 <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -17,8 +17,8 @@
   <div class="margin-auto align-middle fadeIn">
     <h1 class="text-5xl md:text-6xl font-bold font-title">K.M AHNAF ZAMIL</h1>
     <h2 class="text-theme-text text-lg md:text-xl mt-2">Infrastructure & Backend Systems Engineer</h2>
-    <h3 class="text-theme-text text-lg md:text-xl mt-8">I help startups build scalable infrastructure that doesn't break
-      as they grow.</h3>
+    <h3 class="text-theme-text text-lg md:text-xl mt-8">I build scalable infrastructure that doesn't break under
+      pressure.</h3>
 
     <div id="hero-buttons" class="my-10">
       <a href="{{about['github_url']}}" class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm
@@ -49,7 +49,7 @@
         <h2 class="text-3xl font-semibold mb-6 text-white font-title">ABOUT ME</h2>
         <div class="text-xl text-theme-text">
           <p>
-            Hi, I’m <b>Ahnaf</b>! I design and build backend infrastructure for high-growth companies.
+            Hi, I’m <b>Ahnaf</b>! I build scalable systems, distributed architectures, and developer platforms.
           </p><br />
           <p>
             Over the past 7 years, I've architected everything from distributed real-time systems to multi-tenant
@@ -63,9 +63,7 @@
             <li>Database scaling & optimization</li>
           </ul>
           <br />
-          <p>I work with startups and growth-stage companies on infrastructure that scales correctly from the start - so
-            you
-            don't face expensive rewrites later.</p>
+          <p>I love taking ambitious ideas from zero to production - fast.</p>
           <br />
         </div>
       </div>
@@ -98,36 +96,15 @@
   </div>
 </section>
 
-<section class="bg-theme-bg pb-32 pt-16">
-  <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-8 font-title">WHAT I USE</h2>
-    <p class="text-xl text-theme-muted">I'm constantly learning new technologies, so this list will keep getting longer.
-    </p>
-    <div class="py-4 sm:grid grid-rows-10 md:grid-rows-7 lg:grid-rows-5 grid-flow-col gap-x-6">
-      {% for tech in about['technologies'] %}
-      <div
-        class="flex items-center bg-neutral-900 px-6 py-4 my-4 sm:my-3 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all">
-        <button class="flex w-full cursor-pointer ">
-          <div class="flex items-center gap-7 text-lg text-theme-muted">
-            <i class="devicon-{{tech['icon']}} text-white text-2xl"></i>{{tech['lang']}}
-          </div>
-        </button>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="bg-theme-bg pb-32">
+<section class="bg-theme-bg py-16">
   <div class="container mx-auto px-8">
     <h2 class="text-3xl font-bold text-white mb-6 font-title">HOW I CAN HELP</h2>
-    <p class="pb-6 text-xl text-theme-muted">I work with Series A/B startups and growth-stage companies on: </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Service 1 -->
       <div
         class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6">
         <h3 class="text-xl font-semibold mb-2 text-theme-text">Infrastructure Architecture & Design</h3>
-        <p class="text-sm text-theme-muted italic mb-4">Designing scalable systems before you build them - saving months
+        <p class="text-sm text-theme-muted italic mb-4">Designing scalable systems before building them - saving months
           of technical debt</p>
         <ul class="space-y-2">
           <li class="flex items-start text-sm">
@@ -227,13 +204,46 @@
   </div>
 </section>
 
-<section class="py-16">
-  <div class="container mx-auto text-center space-y-6">
-    <h2 class="text-3xl font-semibold text-gray-200 font-title">READY TO WORK TOGETHER?</h2>
-    <p class="text-gray-300 text-lg">If you're dealing with scaling challenges, need infrastructure expertise, or want
-      to discuss your technical architecture, let's talk.<br /><br />I'm currently available for consulting and contract
-      work.
+<section class="bg-theme-bg pb-32 pt-16">
+  <div class="container mx-auto px-8">
+    <h2 class="text-3xl font-bold text-white mb-8 font-title">WHAT I USE</h2>
+    <p class="text-xl text-theme-muted">I'm constantly learning new technologies, so this list will keep getting longer.
     </p>
+    <div class="py-4 sm:grid grid-rows-10 md:grid-rows-7 lg:grid-rows-5 grid-flow-col gap-x-6">
+      {% for tech in about['technologies'] %}
+      <div
+        class="flex items-center bg-neutral-900 px-6 py-4 my-4 sm:my-3 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all">
+        <button class="flex w-full cursor-pointer ">
+          <div class="flex items-center gap-7 text-lg text-theme-muted">
+            <i class="devicon-{{tech['icon']}} text-white text-2xl"></i>{{tech['lang']}}
+          </div>
+        </button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-theme-bg pb-32">
+  <div class="container mx-auto px-8">
+    <h2 class="text-3xl font-bold text-white mb-8 font-title">BLOG & ARTICLES</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for article in about['articles'] %}
+      <a href="{{ article['link'] }}" target="_blank"
+         class="block border border-neutral-800 bg-neutral-900 p-6 transition-all hover:shadow-lg hover:shadow-blue-500/10 duration-300 ease-in-out">
+        <h3 class="text-xl font-semibold font-mono text-white">{{ article['title'] }}</h3>
+        <p class="text-theme-text mt-2">{{ article['summary'] }}</p>
+        <span class="mt-4 inline-block text-theme-accent hover:underline">Read More →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="my-16">
+  <div class="container mx-auto text-center space-y-6">
+    <h2 class="text-3xl font-semibold text-gray-200 font-title">LET'S BUILD SOMETHING GREAT TOGETHER</h2>
+    <p class="text-gray-300 text-lg">I’m currently open to part-time and internship opportunities with startups that love solving deep technical problems.</p>
 
     <div class="flex items-center justify-center gap-4"><a href="mailto:{{about['email']}}"
         class="cursor-pointer relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
