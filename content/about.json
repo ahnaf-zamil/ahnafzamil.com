@@ -6,7 +6,7 @@
   "featured_projects": [
     {
       "name": "Stratus",
-      "description": "A multi-tenant Platform-as-a-Service infrastructure for deploying and managing containerized applications across distributed nodes.",
+      "description": "A multi-tenant Platform-as-a-Service infrastructure I built to understand how platforms like Heroku work under the hood. Current features: Code upload and deployment, intelligent compute node selection based on resource availability, agent-based orchestration, fault-tolerant task distribution with health checks.",
       "technologies": "Go, Python, gRPC, TypeScript/React, Docker + gVisor, PostgreSQL",
       "link": "https://github.com/ahnaf-zamil/stratus"
     },
