@@ -1,40 +1,46 @@
-{% extends "base.html" %}
-
-{% block head_extend %}
+{% extends "base.html" %} {% block head_extend %}
 <title>K.M Ahnaf Zamil | Infrastructure & Backend Systems Engineer</title>
-<script
-  src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"></script>
-<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+{% endblock %} {% block content %} {{navbar("transparent")}}
 
-{% block content %}
-
-{{navbar("transparent")}}
-
-
-<div id="home-hero" class="h-[calc(100vh-80px)] parallax text-center flex items-center justify-center relative">
+<div
+  id="home-hero"
+  class="h-[calc(100vh-80px)] parallax text-center flex items-center justify-center relative"
+>
   <div id="tsparticles" class="fixed z-[-1] opacity-20 top-0 h-full"></div>
   <div class="margin-auto align-middle fadeIn">
     <h1 class="text-5xl md:text-6xl font-bold font-title">K.M AHNAF ZAMIL</h1>
-    <h2 class="text-theme-text text-lg md:text-xl mt-2">Infrastructure & Backend Systems Engineer</h2>
-    <h3 class="text-theme-text text-lg md:text-xl mt-8">I build scalable infrastructure that doesn't break under
-      pressure.</h3>
+    <h2 class="text-theme-text text-lg md:text-xl mt-2">
+      Infrastructure & Backend Systems Engineer
+    </h2>
+    <h3 class="text-theme-text text-lg md:text-xl mt-8">
+      I build scalable infrastructure that doesn't break under pressure.
+    </h3>
 
     <div id="hero-buttons" class="my-10">
-      <a href="{{about['github_url']}}" class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm
-        font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500
-        group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200
-        dark:focus:ring-cyan-800"> <!-- Jinja2 will replace the single quotes inside the JS function -->
+      <a
+        href="{{about['github_url']}}"
+        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+      >
+        <!-- Jinja2 will replace the single quotes inside the JS function -->
         <span
-          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+        >
           See My Work
-
         </span>
       </a>
-      <a href="{{url_for('contact')}}"
-        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+      <a
+        href="{{url_for('contact')}}"
+        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+      >
         <span
-          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+        >
           Get in Touch
         </span>
       </a>
@@ -46,42 +52,73 @@
   <div class="container mx-auto px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="text-left flex flex-col justify-center">
-        <h2 class="text-3xl font-semibold mb-6 text-white font-title">ABOUT ME</h2>
+        <h2 class="text-3xl font-semibold mb-6 text-white font-title">
+          ABOUT ME
+        </h2>
         <div class="text-xl text-theme-text">
           <p>
-            Hi, I'm <b>Ahnaf</b>. I build scalable systems, distributed architectures, and developer platforms.
-          </p><br>
+            Hi, I'm <b>Ahnaf</b>. I build scalable systems, distributed
+            architectures, and developer platforms.
+          </p>
+          <br />
           <p>
-           I've been coding since I was 13. Over the past seven years, I've built real-time messaging systems, container orchestration platforms, and distributed video processing backends-mostly to understand how production systems work under the hood.</p><br>
+            I've been coding since I was 13. Over the past seven years, I've
+            built real-time messaging systems, container orchestration
+            platforms, and distributed video processing backends-mostly to
+            understand how production systems work under the hood.
+          </p>
+          <br />
           <p>
-            I work primarily in Go and Python, focusing on distributed systems, message queues, database scaling, and infrastructure that handles load without breaking. I'm comfortable moving between backend development and systems architecture.</p><br>
-          <p>Currently finishing my degree while looking for part-time and contract work with startups building technically challenging products.</p>
-          <br>
+            I work primarily in Go and Python, focusing on distributed systems,
+            message queues, database scaling, and infrastructure that handles
+            load without breaking. I'm comfortable moving between backend
+            development and systems architecture.
+          </p>
+          <br />
+          <p>
+            Currently finishing my degree while looking for part-time and
+            contract work with startups building technically challenging
+            products.
+          </p>
+          <br />
         </div>
       </div>
 
       <div class="flex justify-center items-center">
-        <img src="{{url_for('static', filename='img/tech.png')}}" alt="Your Image"
-          class="shadow-lg w-[500px] object-cover">
+        <img
+          src="{{url_for('static', filename='img/tech.png')}}"
+          alt="Your Image"
+          class="shadow-lg w-[500px] object-cover"
+        />
       </div>
     </div>
   </div>
 </section>
 
-
 <section class="bg-theme-bg py-16">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-8 font-title">FEATURED PROJECTS</h2>
+    <h2 class="text-3xl font-bold text-white mb-8 font-title">
+      FEATURED PROJECTS
+    </h2>
 
     <div class="grid grid-cols-1 auto-rows-fr sm:grid-cols-2 gap-6">
       {% for project in about['featured_projects'] %}
-      <a href="{{project['link']}}" target="_blank"
-        class="block rounded-xl font-sans border border-neutral-800 bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-indigo-500/15 to-neutral-900/25 p-6 transition-all hover:shadow-lg hover:shadow-blue-500/10">
-        <h3 class="text-xl font-semibold font-mono text-white">{{project['name']}}</h3>
+      <a
+        href="{{project['link']}}"
+        target="_blank"
+        class="block rounded-xl font-sans border border-neutral-800 bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-indigo-500/15 to-neutral-900/25 p-6 transition-all hover:shadow-lg hover:shadow-blue-500/10"
+      >
+        <h3 class="text-xl font-semibold font-mono text-white">
+          {{project['name']}}
+        </h3>
         <p class="text-theme-text mt-2">{{project['description']}}</p>
-        <p class="text-theme-text mt-2"><span class="text-white font-medium">Technology used:
-          </span>{{project['technologies']}}</p>
-        <span class="mt-4 inline-block text-theme-accent hover:underline">View on GitHub →</span>
+        <p class="text-theme-text mt-2">
+          <span class="text-white font-medium">Technology used: </span
+          >{{project['technologies']}}
+        </p>
+        <span class="mt-4 inline-block text-theme-accent hover:underline"
+          >View on GitHub →</span
+        >
       </a>
       {% endfor %}
     </div>
@@ -90,108 +127,257 @@
 
 <section class="bg-theme-bg py-16">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-6 font-title">TECHNICAL AREAS</h2>
+    <h2 class="text-3xl font-bold text-white mb-8 font-title">TESTIMONIALS</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Samuel Eggins testimonial -->
+      <div
+        class="bg-neutral-900 border border-neutral-800 rounded-lg flex flex-col justify-center"
+        style="padding: 2rem"
+      >
+        <div class="h-full flex flex-col items-center justify-center">
+          <p
+            class="text-theme-text leading-relaxed"
+            style="margin-bottom: 1.5rem"
+          >
+            "Throughout Ahnaf's employment, he was able to fulfil every single
+            need of my business. Ahnaf constantly adjusted his schedule to
+            prioritise work and was able to keep up-to-date on a strict work
+            schedule. He was able to develop my business' website and its
+            service within three months of work, which involved setting up
+            email, administration, contact support and ultimately developing the
+            service. He continuously conveyed effective time management during
+            the website's development, an ability to communicate and listen to
+            create my vision, the confidence to discuss with me his own ideas
+            and an interest in his work. Ahnaf is a good worker - he was able to
+            do everything I asked of him with great attention to detail."
+          </p>
+        </div>
+
+        <div
+          class="border-t border-neutral-700"
+          style="padding-top: 1rem; margin-top: auto"
+        >
+          <p class="text-theme-accent font-title font-semibold">Samuel Eggins</p>
+          <p class="text-theme-muted text-sm">
+            Founder, Dupeids (Sydney, Australia)
+          </p>
+          <p class="text-theme-muted text-sm" style="margin-top: 0.25rem">
+            18-month contract • Feb 2021 - Aug 2023
+          </p>
+        </div>
+      </div>
+
+      <!-- Joseph Allen testimonials -->
+      <div
+        class="bg-neutral-900 border border-neutral-800 rounded-lg flex flex-col justify-center"
+        style="padding: 2rem"
+      >
+        <div class="h-full flex flex-col items-center justify-center">
+          <p
+            class="text-theme-text leading-relaxed"
+            style="margin-bottom: 1rem"
+          >
+            "Excellent work... I will definitely be working with this developer
+            in the future! I highly recommend Ahnaf, he is adaptable,
+            hardworking, and proactive."
+          </p>
+          <p
+            class="text-theme-text leading-relaxed"
+            style="margin-bottom: 1.5rem"
+          >
+            "This is my second project with this developer... I struck gold with
+            Ahnaf! He is my first developer on Fiverr and has made a very good
+            impression on myself and my team."
+          </p>
+        </div>
+        <div
+          class="border-t border-neutral-700"
+          style="padding-top: 1rem; margin-top: auto"
+        >
+          <p class="text-theme-accent font-title font-semibold">Joseph Allen</p>
+          <p class="text-theme-muted text-sm">
+            Contract Client • December 2020 (2 projects)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-theme-bg py-16">
+  <div class="container mx-auto px-8">
+    <h2 class="text-3xl font-bold text-white mb-6 font-title">
+      TECHNICAL AREAS
+    </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Service 1 -->
       <div
-        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6">
-        <h3 class="text-xl font-semibold mb-2 text-theme-text">Infrastructure Architecture & Design</h3>
+        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6"
+      >
+        <h3 class="text-xl font-semibold mb-2 text-theme-text">
+          Infrastructure Architecture & Design
+        </h3>
         <ul class="space-y-2">
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Microservices architecture and service boundaries</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Microservices architecture and service boundaries</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
             <span class="text-theme-text/90">Distributed systems design</span>
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Database architecture and partitioning strategies</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Database architecture and partitioning strategies</span
+            >
           </li>
         </ul>
       </div>
 
       <!-- Service 2 -->
       <div
-        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6">
-        <h3 class="text-xl font-semibold mb-2 text-theme-text">System Scaling & Performance</h3>
+        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6"
+      >
+        <h3 class="text-xl font-semibold mb-2 text-theme-text">
+          System Scaling & Performance
+        </h3>
         <ul class="space-y-2">
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Database query optimization and indexing</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Database query optimization and indexing</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Caching layer implementation (Redis, CDN)</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Caching layer implementation (Redis, CDN)</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Load balancing and horizontal scaling</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Load balancing and horizontal scaling</span
+            >
           </li>
         </ul>
       </div>
 
       <!-- Service 3 -->
       <div
-        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6">
-        <h3 class="text-xl font-semibold mb-2 text-theme-text">Real-Time & Event-Driven Systems</h3>
+        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6"
+      >
+        <h3 class="text-xl font-semibold mb-2 text-theme-text">
+          Real-Time & Event-Driven Systems
+        </h3>
         <ul class="space-y-2">
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Distributed WebSocket systems for real-time features</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Distributed WebSocket systems for real-time features</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Message queue architecture (Kafka, NATS, RabbitMQ)</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Message queue architecture (Kafka, NATS, RabbitMQ)</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Pub/sub patterns and event-driven design</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Pub/sub patterns and event-driven design</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Service discovery and API gateway implementation</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Service discovery and API gateway implementation</span
+            >
           </li>
         </ul>
       </div>
 
       <!-- Service 4 -->
       <div
-        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6">
-        <h3 class="text-xl font-semibold mb-2 text-theme-text">Container Orchestration & Deployment</h3>
+        class="bg-neutral-900 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all border-l-4 border-theme-accent rounded-lg p-6"
+      >
+        <h3 class="text-xl font-semibold mb-2 text-theme-text">
+          Container Orchestration & Deployment
+        </h3>
         <ul class="space-y-2">
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Containerization and Docker optimization</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Containerization and Docker optimization</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">CI/CD pipeline implementation</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >CI/CD pipeline implementation</span
+            >
           </li>
           <li class="flex items-start text-sm">
-            <span class="text-theme-accent font-bold mr-2 flex-shrink-0">→</span>
-            <span class="text-theme-text/90">Infrastructure as code and deployment automation</span>
+            <span class="text-theme-accent font-bold mr-2 flex-shrink-0"
+              >→</span
+            >
+            <span class="text-theme-text/90"
+              >Infrastructure as code and deployment automation</span
+            >
           </li>
         </ul>
       </div>
     </div>
-
   </div>
 </section>
 
 <section class="bg-theme-bg pb-32 pt-16">
   <div class="container mx-auto px-8">
     <h2 class="text-3xl font-bold text-white mb-8 font-title">WHAT I USE</h2>
-    <p class="text-xl text-theme-muted">I'm constantly learning new technologies, so this list will keep getting longer.
+    <p class="text-xl text-theme-muted">
+      I'm constantly learning new technologies, so this list will keep getting
+      longer.
     </p>
-    <div class="py-4 sm:grid grid-rows-10 md:grid-rows-7 lg:grid-rows-5 grid-flow-col gap-x-6">
+    <div
+      class="py-4 sm:grid grid-rows-10 md:grid-rows-7 lg:grid-rows-5 grid-flow-col gap-x-6"
+    >
       {% for tech in about['technologies'] %}
       <div
-        class="flex items-center bg-neutral-900 px-6 py-4 my-4 sm:my-3 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all">
-        <button class="flex w-full cursor-pointer ">
+        class="flex items-center bg-neutral-900 px-6 py-4 my-4 sm:my-3 duration-1000 ease-in-out hover:bg-linear-to-r/oklab from-neutral-700/15 to-neutral-900/25 transition-all"
+      >
+        <button class="flex w-full cursor-pointer">
           <div class="flex items-center gap-7 text-lg text-theme-muted">
-            <i class="devicon-{{tech['icon']}} text-white text-2xl"></i>{{tech['lang']}}
+            <i class="devicon-{{tech['icon']}} text-white text-2xl"></i
+            >{{tech['lang']}}
           </div>
         </button>
       </div>
@@ -202,14 +388,23 @@
 
 <section class="bg-theme-bg pb-32">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-8 font-title">BLOG & ARTICLES</h2>
+    <h2 class="text-3xl font-bold text-white mb-8 font-title">
+      BLOG & ARTICLES
+    </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for article in about['articles'] %}
-      <a href="{{ article['link'] }}" target="_blank"
-         class="block border border-neutral-800 bg-neutral-900 p-6 transition-all hover:shadow-lg hover:shadow-blue-500/10 duration-300 ease-in-out">
-        <h3 class="text-xl font-semibold font-mono text-white">{{ article['title'] }}</h3>
+      <a
+        href="{{ article['link'] }}"
+        target="_blank"
+        class="block border border-neutral-800 bg-neutral-900 p-6 transition-all hover:shadow-lg hover:shadow-blue-500/10 duration-300 ease-in-out"
+      >
+        <h3 class="text-xl font-semibold font-mono text-white">
+          {{ article['title'] }}
+        </h3>
         <p class="text-theme-text mt-2">{{ article['summary'] }}</p>
-        <span class="mt-4 inline-block text-theme-accent hover:underline">Read More →</span>
+        <span class="mt-4 inline-block text-theme-accent hover:underline"
+          >Read More →</span
+        >
       </a>
       {% endfor %}
     </div>
@@ -218,20 +413,34 @@
 
 <section class="my-16">
   <div class="container mx-auto text-center space-y-6">
-    <h2 class="text-3xl font-semibold text-gray-200 font-title">LET'S WORK TOGETHER</h2>
-    <p class="text-gray-300 text-lg">I’m currently open to part-time and contract opportunities with startups that love solving deep technical problems.</p>
+    <h2 class="text-3xl font-semibold text-gray-200 font-title">
+      LET'S WORK TOGETHER
+    </h2>
+    <p class="text-gray-300 text-lg">
+      I’m currently open to part-time and contract opportunities with startups
+      that love solving deep technical problems.
+    </p>
 
-    <div class="flex items-center justify-center gap-4"><a href="mailto:{{about['email']}}"
-        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
+    <div class="flex items-center justify-center gap-4">
+      <a
+        href="mailto:{{about['email']}}"
+        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800"
+      >
         <span
-          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+        >
           Email Me
         </span>
       </a>
-      <p>or</p><a target="_blank" href="{{about['calendly_url']}}"
-        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+      <p>or</p>
+      <a
+        target="_blank"
+        href="{{about['calendly_url']}}"
+        class="cursor-pointer relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800"
+      >
         <span
-          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+        >
           Schedule a Call
         </span>
       </a>
@@ -239,11 +448,7 @@
   </div>
 </section>
 
-{{footer()}}
-
-{% endblock %}
-
-{% block scripts %}
+{{footer()}} {% endblock %} {% block scripts %}
 <script>
   (async () => {
     await loadSquaresPreset(tsParticles);
@@ -259,12 +464,10 @@
           stroke: {
             width: 5,
             color: {
-              value: [
-                "#5bc0eb",
-              ],
+              value: ["#5bc0eb"],
             },
           },
-        }
+        },
       },
     });
   })();
