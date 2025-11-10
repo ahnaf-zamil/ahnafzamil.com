@@ -7,5 +7,9 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.4",
     "tailwindcss": "^4.1.4"
+  },
+  "scripts": {
+    "build:css": "npx tailwindcss -c tailwind.config.js -i ./styles.css -o ./app/static/css/tailwind.css --minify",
+    "watch:css": "npx tailwindcss -c tailwind.config.js -i ./styles.css -o ./app/static/css/tailwind.css --minify --watch"
   }
 }

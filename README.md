@@ -5,7 +5,12 @@ Made with Flask and Tailwind
 ## Build the Tailwind CSS file
 
 ```
-npx tailwindcss -i ./styles.css -o ./app/static/css/tailwind.css
+yarn run build:css
+```
+
+Use this during development/edits for live update
+```
+yarn run watch:css
 ```
 
 ## License

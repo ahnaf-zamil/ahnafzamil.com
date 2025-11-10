@@ -1,10 +1,15 @@
 {% extends "base.html" %} {% block head_extend %}
 <title>K.M Ahnaf Zamil | Infrastructure & Backend Systems Engineer</title>
-<script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"></script>
 <link
   rel="stylesheet"
   type="text/css"
   href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+
+<link
+  rel="preload"
+  as="script"
+  href="https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js"
 />
 {% endblock %} {% block content %} {{navbar("transparent")}}
 
@@ -12,8 +17,13 @@
   id="home-hero"
   class="h-[calc(100vh-80px)] parallax text-center flex items-center justify-center relative"
 >
-  <div id="tsparticles" class="fixed z-[-1] opacity-20 top-0 h-full"></div>
-  <div class="margin-auto align-middle fadeIn">
+  <!-- Particle canvas size immediately defined to avoid LCP delay -->
+  <div
+    id="tsparticles"
+    class="fixed z-[-1] opacity-20 top-0 h-full w-full"
+  ></div>
+
+  <div class="margin-auto align-middle fadeIn mx-4">
     <h1 class="text-5xl md:text-6xl font-bold font-title">K.M AHNAF ZAMIL</h1>
     <h2 class="text-theme-text text-lg md:text-xl mt-2">
       Infrastructure & Backend Systems Engineer
@@ -27,7 +37,6 @@
         href="{{about['github_url']}}"
         class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
       >
-        <!-- Jinja2 will replace the single quotes inside the JS function -->
         <span
           class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
         >
@@ -47,11 +56,12 @@
     </div>
   </div>
 </div>
-
 <section class="about-me py-16 bg-theme-bg">
   <div class="container mx-auto px-8">
     <div class="text-left flex flex-col justify-center">
-      <h2 class="text-3xl font-semibold mb-6 text-white font-title">
+      <h2
+        class="text-3xl font-semibold mb-6 text-white text-center md:text-left font-title"
+      >
         ABOUT ME
       </h2>
       <div class="w-full text-xl text-theme-text">
@@ -86,7 +96,9 @@
 
 <section class="bg-theme-bg pb-18">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-8 font-title">
+    <h2
+      class="text-3xl font-bold text-white mb-8 text-center md:text-left font-title"
+    >
       FEATURED PROJECTS
     </h2>
 
@@ -116,7 +128,11 @@
 
 <section class="bg-theme-bg py-16">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-8 font-title">TESTIMONIALS</h2>
+    <h2
+      class="text-3xl font-bold text-white mb-8 text-center md:text-left font-title"
+    >
+      TESTIMONIALS
+    </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Samuel Eggins testimonial -->
@@ -198,7 +214,9 @@
 
 <section class="bg-theme-bg py-16">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-6 font-title">
+    <h2
+      class="text-3xl font-bold text-white mb-6 text-center md:text-left font-title"
+    >
       TECHNICAL AREAS
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -342,7 +360,7 @@
               >→</span
             >
             <span class="text-theme-text/90"
-              >Infrastructure as code and deployment automation</span
+              >Kubernetes and deployment automation</span
             >
           </li>
         </ul>
@@ -353,7 +371,11 @@
 
 <section class="bg-theme-bg pb-32 pt-16">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-8 font-title">WHAT I USE</h2>
+    <h2
+      class="text-3xl font-bold text-white mb-8 text-center md:text-left font-title"
+    >
+      WHAT I USE
+    </h2>
     <p class="text-xl text-theme-muted">
       I'm constantly learning new technologies, so this list will keep getting
       longer.
@@ -379,7 +401,9 @@
 
 <section class="bg-theme-bg pb-32">
   <div class="container mx-auto px-8">
-    <h2 class="text-3xl font-bold text-white mb-8 font-title">
+    <h2
+      class="text-3xl font-bold text-white mb-8 text-center md:text-left font-title"
+    >
       BLOG & ARTICLES
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -403,7 +427,7 @@
 </section>
 
 <section class="my-16">
-  <div class="container mx-auto text-center space-y-6">
+  <div class="container mx-auto text-center space-y-6 px-4">
     <h2 class="text-3xl font-semibold text-gray-200 font-title">
       LET'S WORK TOGETHER
     </h2>
@@ -438,29 +462,27 @@
     </div>
   </div>
 </section>
-
 {{footer()}} {% endblock %} {% block scripts %}
 <script>
-  (async () => {
-    await loadSquaresPreset(tsParticles);
-
-    await tsParticles.load({
-      id: "tsparticles",
-      options: {
-        preset: "squares",
-        fullScreen: {
-          enable: false,
-        },
-        particles: {
-          stroke: {
-            width: 5,
-            color: {
-              value: ["#5bc0eb"],
-            },
+  // Wait until the hero section is painted
+  requestAnimationFrame(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/npm/@tsparticles/preset-squares@3/tsparticles.preset.squares.bundle.min.js";
+    script.onload = async () => {
+      if (typeof loadSquaresPreset !== "undefined") {
+        await loadSquaresPreset(tsParticles);
+        await tsParticles.load({
+          id: "tsparticles",
+          options: {
+            preset: "squares",
+            fullScreen: { enable: false },
+            particles: { stroke: { width: 5, color: { value: ["#5bc0eb"] } } },
           },
-        },
-      },
-    });
-  })();
+        });
+      }
+    };
+    document.body.appendChild(script);
+  });
 </script>
 {% endblock %}

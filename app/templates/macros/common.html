@@ -68,7 +68,7 @@
         >Projects</a
       >
       <a
-        href="{{url_for('blog')}}"
+        href="{{about['blog']}}"
         class="block px-4 py-2 text-center hover:text-indigo-200 hover:drop-shadow-[0_0_6px_#1e88e5] transition"
         >Blog</a
       >
@@ -79,11 +79,12 @@
       >
     </div>
 
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-2">
       <a
         href="{{about['github_url']}}"
         target="_blank"
         class="z-2 font-title text-4xl select-none cursor-pointer"
+        aria-label="K.M Ahnaf Zamil GitHub Profile"
       >
         <svg
           class="h-10 w-10"
@@ -121,6 +122,7 @@
         href="{{about['linkedin_url']}}"
         target="_blank"
         class="z-2 font-title text-4xl select-none cursor-pointer"
+        aria-label="K.M Ahnaf Zamil LinkedIn Profile"
       >
         <svg
           class="h-10 w-10"
@@ -169,7 +171,7 @@
 </script>
 {% endmacro %} {% macro footer() %}
 
-<footer class="bg-theme-bg text-theme-text py-10">
+<footer class="bg-theme-bg text-theme-text py-10 px-4">
   <div class="container mx-auto text-center space-y-4">
     <p class="text-lg font-semibold text-gray-200 font-title">
       K.M AHNAF ZAMIL

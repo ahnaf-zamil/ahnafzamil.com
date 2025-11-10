@@ -78,6 +78,14 @@ def sitemap():
 # Routes start here
 
 
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    response = make_response(send_from_directory("static", filename))
+    # Cache for 1 year
+    response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    return response
+
+
 @app.route("/")
 def home():
     return render_template("home.html")
