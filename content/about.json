@@ -46,8 +46,9 @@
     { "lang": "React.js", "icon": "react-original" },
     { "lang": "Tailwind", "icon": "tailwindcss-original" },
     { "lang": "NGINX", "icon": "nginx-original" },
+    { "lang": "React Native", "icon": "reactnative-original" },
     { "lang": "Linux", "icon": "linux-plain" },
-    { "lang": "Cloudflare", "icon": "cloudflare-plain" },
+    { "lang": "Cloudflare Stack", "icon": "cloudflare-plain" },
     { "lang": "Git", "icon": "git-plain" },
     { "lang": "GitHub Actions", "icon": "githubactions-plain" }
   ],
