@@ -53,6 +53,14 @@ def inject_technical_areas():
     return dict(technical_areas=technical_areas["areas"])
 
 
+@app.context_processor
+def inject_testimonials():
+    import json
+    with open("./content/testimonials.json") as f:
+        testimonials = json.load(f)
+    return dict(testimonials=testimonials["testimonials"])
+
+
 @app.errorhandler(429)
 def ratelimit_handler(e):
     return render_template("errors/429.html"), 429

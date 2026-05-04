@@ -128,28 +128,29 @@
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Samuel Eggins testimonial -->
+      {% for testimonial in testimonials %}
       <div
         class="bg-neutral-900 border border-neutral-800 rounded-lg flex flex-col justify-center"
         style="padding: 2rem"
       >
-        <div class="h-full flex flex-col items-center justify-center">
-          <blockquote
-            class="italic text-theme-text leading-relaxed"
-            style="margin-bottom: 1.5rem"
-          >
-            "Throughout Ahnaf's employment, he was able to fulfil every single
-            need of my business. Ahnaf constantly adjusted his schedule to
-            prioritise work and was able to keep up-to-date on a strict work
-            schedule. He was able to develop my business' website and its
-            service within three months of work, which involved setting up
-            email, administration, contact support and ultimately developing the
-            service. He continuously conveyed effective time management during
-            the website's development, an ability to communicate and listen to
-            create my vision, the confidence to discuss with me his own ideas
-            and an interest in his work. Ahnaf is a good worker - he was able to
-            do everything I asked of him with great attention to detail."
-          </blockquote>
+        <div class="h-full flex flex-col justify-center">
+          {% if testimonial.quotes %}
+            {% for quote in testimonial.quotes %}
+            <blockquote
+              class="italic text-theme-text leading-relaxed"
+              style="margin-bottom: {% if loop.last %}1.5rem{% else %}1rem{% endif %}"
+            >
+              "{{ quote }}"
+            </blockquote>
+            {% endfor %}
+          {% else %}
+            <blockquote
+              class="italic text-theme-text leading-relaxed"
+              style="margin-bottom: 1.5rem"
+            >
+              "{{ testimonial.quote }}"
+            </blockquote>
+          {% endif %}
         </div>
 
         <div
@@ -157,50 +158,19 @@
           style="padding-top: 1rem; margin-top: auto"
         >
           <p class="text-theme-accent font-title font-semibold">
-            Samuel Eggins
+            {{ testimonial.name }}
           </p>
           <p class="text-theme-muted text-sm">
-            Founder, Dupeids (Sydney, Australia)
+            {{ testimonial.title }}
           </p>
+          {% if testimonial.meta %}
           <p class="text-theme-muted text-sm" style="margin-top: 0.25rem">
-            18-month contract • Feb 2021 - Aug 2023
+            {{ testimonial.meta }}
           </p>
+          {% endif %}
         </div>
       </div>
-
-      <!-- Joseph Allen testimonials -->
-      <div
-        class="bg-neutral-900 border border-neutral-800 rounded-lg flex flex-col justify-center"
-        style="padding: 2rem"
-      >
-        <div class="h-full flex flex-col items-center justify-center">
-          <blockquote
-            class="italic text-theme-text leading-relaxed"
-            style="margin-bottom: 1rem"
-          >
-            "Excellent work... I will definitely be working with this developer
-            in the future! I highly recommend Ahnaf, he is adaptable,
-            hardworking, and proactive."
-          </blockquote>
-          <blockquote
-            class="italic text-theme-text leading-relaxed"
-            style="margin-bottom: 1.5rem"
-          >
-            "This is my second project with this developer... I struck gold with
-            Ahnaf! He is my first developer on Fiverr and has made a very good
-            impression on myself and my team."
-          </blockquote>
-        </div>
-        <div
-          class="border-t border-neutral-700"
-          style="padding-top: 1rem; margin-top: auto"
-        >
-          <p class="text-theme-accent font-title font-semibold">Joseph Allen</p>
-          <p class="text-theme-muted text-sm">
-            Contract Client • December 2020 (2 projects)
-          </p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
