@@ -1,16 +1,16 @@
-# My Personal Site
+# My Personal Site (ahnafzamil.com)
 
 Made with Flask and Tailwind
 
 ## Build the Tailwind CSS file
 
 ```
-yarn run build:css
+bun run build:css
 ```
 
 Use this during development/edits for live update
 ```
-yarn run watch:css
+bun run watch:css
 ```
 
 ## License

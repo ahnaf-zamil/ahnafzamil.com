@@ -1,0 +1,46 @@
+{
+  "areas": [
+    {
+      "title": "Backend Architecture & Design",
+      "points": [
+        "Microservices architecture and service boundaries",
+        "Designing fault-tolerant distributed systems",
+        "Database architecture and partitioning strategies"
+      ]
+    },
+    {
+      "title": "System Scaling & Performance",
+      "points": [
+        "Query optimization and strategic indexing for complex datasets",
+        "Caching layer implementation (Redis, CDN)",
+        "Architecting horizontally scalable systems for dynamic demand"
+      ]
+    },
+    {
+      "title": "Real-Time & Event-Driven Systems",
+      "points": [
+        "Building low-latency, distributed real-time communication layers",
+        "Ensuring data consistency in eventual consistency systems",
+        "Pub/sub patterns and event-driven design",
+        "Service discovery and API gateway implementation"
+      ]
+    },
+    {
+      "title": "Container Orchestration & Deployment",
+      "points": [
+        "Optimizing containerization and container registry strategies",
+        "GitOps and progressive deployment strategies",
+        "Kubernetes and deployment automation"
+      ]
+    },
+    {
+      "title": "AI & Agent Systems",
+      "points": [
+        "Integrating agentic AI systems into production applications",
+        "RAG pipelines for domain-specific knowledge and context scaling",
+        "Cost optimization and latency management in LLM applications",
+        "Production-grade agent monitoring, evaluation frameworks and safety guardrails"
+      ]
+    }
+  ]
+}

@@ -45,6 +45,14 @@ def inject_about():
     return dict(about=cache.get_about_info(), year=datetime.now().year)
 
 
+@app.context_processor
+def inject_technical_areas():
+    import json
+    with open("./content/technical_areas.json") as f:
+        technical_areas = json.load(f)
+    return dict(technical_areas=technical_areas["areas"])
+
+
 @app.errorhandler(429)
 def ratelimit_handler(e):
     return render_template("errors/429.html"), 429
