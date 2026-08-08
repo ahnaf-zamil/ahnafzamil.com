@@ -8,7 +8,7 @@ export default function Hero() {
     >
       <div
         id="tsparticles"
-        className="fixed z-[-1] opacity-20 top-0 h-full w-full"
+        className="fixed z-[-1] opacity-0 transition-opacity duration-2500 top-0 h-full w-full"
       />
       <ParticlesBackground />
 
@@ -18,9 +18,10 @@ export default function Hero() {
           Backend Systems & AI Engineer
         </h2>
         <h3 className="text-theme-text text-lg md:text-xl mt-8">
-          Where AI agents meet distributed systems.
+        Where systems engineering meets product.
         </h3>
 
+        {/* OLD BUTTONS — commented out for revert
         <div id="hero-buttons" className="my-10">
           <a
             href="https://github.com/ahnaf-zamil"
@@ -37,6 +38,22 @@ export default function Hero() {
             <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
               Get in Touch
             </span>
+          </a>
+        </div>
+        */}
+
+        <div id="hero-buttons" className="my-10">
+          <a
+            href="https://github.com/ahnaf-zamil"
+            className="inline-block px-6 py-3 rounded-lg border border-white bg-[#111] text-white hover:bg-white hover:text-[#111] text-sm font-medium transition-colors duration-700"
+          >
+            See My Work
+          </a>
+          <a
+            href="/contact"
+            className="inline-block px-6 py-3 rounded-lg border border-white bg-[#111] text-white hover:bg-white hover:text-[#111] text-sm font-medium ml-2 transition-colors duration-700"
+          >
+            Get in Touch
           </a>
         </div>
       </div>

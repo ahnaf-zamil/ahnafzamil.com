@@ -46,6 +46,9 @@ export default function ParticlesBackground() {
       if (cancelled) {
         container?.destroy();
       }
+
+      const el = document.getElementById("tsparticles");
+      if (el) el.style.opacity = "0.2";
     }
 
     init();
