@@ -34,7 +34,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://api.fontshare.com/v2/css?f[]=bespoke-stencil@700&f[]=general-sans@400,500,700&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=bespoke-stencil@700&display=swap"
           rel="stylesheet"
         />
         <link

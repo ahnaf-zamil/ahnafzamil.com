@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/ClashGrotesk_Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Clash Grotesk", sans-serif;
+}
+
 :root {
   --color-theme-bg: #101010;
   --color-theme-text: #e5e5e5;
@@ -11,7 +22,7 @@
 body {
   color: #fff;
   background-color: var(--color-theme-bg);
-  font-family: "General Sans", sans-serif;
+  font-family: "Clash Grotesk", sans-serif;
 }
 
 .font-title {
