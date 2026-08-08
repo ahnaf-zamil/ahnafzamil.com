@@ -5,7 +5,9 @@ export default function Testimonials() {
       title: "Founder, Dupeids (Sydney, Australia)",
       duration: "18-month contract • Feb 2021 - Aug 2023",
       quotes: [
-        "Throughout Ahnaf's employment, he was able to fulfil every single need of my business. Ahnaf constantly adjusted his schedule to prioritise work and was able to keep up-to-date on a strict work schedule. He was able to develop my business' website and its service within three months of work, which involved setting up email, administration, contact support and ultimately developing the service. He continuously conveyed effective time management during the website's development, an ability to communicate and listen to create my vision, the confidence to discuss with me his own ideas and an interest in his work. Ahnaf is a good worker - he was able to do everything I asked of him with great attention to detail.",
+        "Throughout Ahnaf's employment, he was able to fulfil every single need of my business. Ahnaf constantly adjusted his schedule to prioritise work and was able to keep up-to-date on a strict work schedule. He was able to develop my business' website and its service within three months of work, which involved setting up email, administration, contact support and ultimately developing the service.",
+        "He continuously conveyed effective time management during the website's development, an ability to communicate and listen to create my vision, the confidence to discuss with me his own ideas and an interest in his work.",
+        "Ahnaf is a good worker - he was able to do everything I asked of him with great attention to detail.",
       ],
     },
     {

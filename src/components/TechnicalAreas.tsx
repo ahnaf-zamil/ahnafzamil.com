@@ -8,16 +8,25 @@ const areas: TechnicalArea[] = [
     title: "Backend Architecture & Design",
     skills: [
       "Microservices architecture and service boundaries",
-      "Designing fault-tolerant distributed systems",
+      "Fault-tolerant distributed system design",
       "Database architecture and partitioning strategies",
+      "Service discovery and API gateway implementation",
     ],
   },
   {
     title: "System Scaling & Performance",
     skills: [
-      "Query optimization and strategic indexing for complex datasets",
+      "Query optimization and strategic indexing",
       "Caching layer implementation (Redis, CDN)",
-      "Architecting horizontally scalable systems for dynamic demand",
+      "Architecting horizontally scalable systems",
+    ],
+  },
+  {
+    title: "Full-Stack Product Engineering",
+    skills: [
+      "Shipping end-to-end products from concept to production",
+      "Building MVPs and prototypes for rapid market validation",
+      "Owning product decisions alongside technical architecture",
     ],
   },
   {
@@ -26,13 +35,12 @@ const areas: TechnicalArea[] = [
       "Building low-latency, distributed real-time communication layers",
       "Ensuring data consistency in eventual consistency systems",
       "Pub/sub patterns and event-driven design",
-      "Service discovery and API gateway implementation",
     ],
   },
   {
     title: "Container Orchestration & Deployment",
     skills: [
-      "Optimizing containerization and container registry strategies",
+      "Containerization and registry optimization",
       "GitOps and progressive deployment strategies",
       "Kubernetes and deployment automation",
     ],
@@ -43,7 +51,6 @@ const areas: TechnicalArea[] = [
       "Integrating agentic AI systems into production applications",
       "RAG pipelines for domain-specific knowledge and context scaling",
       "Cost optimization and latency management in LLM applications",
-      "Production-grade agent monitoring, evaluation frameworks and safety guardrails",
     ],
   },
 ];
