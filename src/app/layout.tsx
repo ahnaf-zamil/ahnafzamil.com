@@ -46,6 +46,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
         <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="b76aa8ba-3553-4b09-9215-60acd1f9d814"></script>
       </head>
       <body className="flex flex-col min-h-screen bg-theme-bg">
         {children}
