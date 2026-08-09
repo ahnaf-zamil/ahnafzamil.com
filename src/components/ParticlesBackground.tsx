@@ -22,7 +22,7 @@ export default function ParticlesBackground() {
         options: {
           fpsLimit: 60,
           particles: {
-            number: { value: 60, density: { enable: false }, limit: { value: 80 } },
+            number: { value: 40, density: { enable: false },  },
             links: {
               enable: true,
               opacity: 0.6,

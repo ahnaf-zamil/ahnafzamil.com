@@ -6,7 +6,7 @@ export default function About() {
           <h2 className="text-3xl font-semibold mb-6 text-white text-center md:text-left font-title">
             ABOUT ME
           </h2>
-          <div className="w-full max-w-[70%] text-xl text-theme-text">
+          <div className="w-full max-w-full text-xl text-theme-text">
             <p className="mb-4">
               Hi, I&apos;m <b>Ahnaf</b>. I design and ship production systems that handle complexity at scale, from distributed architectures to AI-powered applications.
             </p>
